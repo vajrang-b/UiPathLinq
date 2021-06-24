@@ -1,13 +1,19 @@
 
-**if row value starts with a word**
+# **if row value starts with a word**
 
-**Function Method**
+## **Function Method**
 
-"dt.AsEnumerable.Where(
+ "dt.AsEnumerable.Where(
 Function(row) row(""Name"").toString.StartsWith(""bajaj"")
-	)"
-	
-**Query Method**
+	)" 
+
+Function Method  | Query Method
+------------- | -------------
+"dt.AsEnumerable.Where(Function(row) row("Name").toString.StartsWith("bajaj"))"   | "(From row In dt.Select() Where row("Name").ToString.StartsWith("bajaj") Select row).ToArray"
+Content Cell  | Content Cell
+
+
+## **Query Method**
 
   "(From row In dt.Select() 
 Where row(""Name"").ToString.StartsWith(""bajaj"") 
