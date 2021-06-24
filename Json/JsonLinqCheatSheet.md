@@ -1,6 +1,6 @@
 #jsonLinqCheatSheet
 
-<a href="/JsonInputFile.json">JSON INPUT FILE</a>
+<a href="/Json/JsonInputFile.json">JSON INPUT FILE</a>
 
 Question |Function Method  | Query Method
 -------|------------- | -------------
