@@ -1,0 +1,7 @@
+**Common Language Integrated Queries**
+Operation|Method Syntax | Query Syntax
+------------------------|--------------|---------------
+Filtering and converting back to DataTable|Dt_Data.AsEnumerable().Where(Function(w) w("country").ToString.Trim.Contains("Afghanistan")).Select(Function(s) Dt_Data.Clone.LoadDataRow(s.ItemArray,False)).CopyToDataTable()|(From row In Dt_Data.AsEnumerable() Where row("country").ToString.Trim.Contains("Afghanistan") Select Dt_Result.Rows.Add(row.ItemArray)).CopyTodataTable()
+Finding count of duplicate rows|Dt_Data.AsEnumerable().GroupBy(Function(g) g("country").ToString.Trim).Select(Function(s) Dt_Result.Clone.LoadDataRow({s.Key, CType(s.Count, Integer)},False)).CopyToDataTable()|(From row in Dt_Data.AsEnumerable() Group row by key = row("country").ToString.Trim Into grp = Group Select Dt_Result.Rows.Add(New Object(){Key, CType(Key.Count, Integer)})).CopyToDataTable()
+Dividing DataTable into a List of Grouped List of DataRow|Dt_Data.AsEnumerable().GroupBy(Function(g) g("country").ToString.Trim).Select(Function(s) s.ToList()).ToList()|(From row In Dt_Data.AsEnumerable() Group row by key = d("country").ToString.Trim Into grp = Group Select grp.ToList()).ToList()
+Dividing DataTable into a List of Grouped DataTables|Dt_Data.AsEnumerable().GroupBy(Function(g) g("country").ToString.Trim).Select(Function(s) s.CopyToDataTable()).ToList()|(From row in Dt_Data.AsEnumerable() Group row by key = d("country").ToString.Trim Into grp = Group Select grp.CopyToDataTable()).ToList()
