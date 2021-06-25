@@ -15,7 +15,7 @@ It contains two blocks
 
 2. <a href = "DataTable/DatatableLinqCheetsheet.md">DataTable Linq  Queries</a>
 
-Raise all your issues in the <a href="issues" target="_blank">issues</a> tab
+Raise all your issues in the <a href="https://github.com/vajrang-b/UiPathLinq/issues" target="_blank">issues</a> tab
 
 Sample data files are added in the folders do check them 
 
